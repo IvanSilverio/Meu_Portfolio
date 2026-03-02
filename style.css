@@ -11,8 +11,81 @@ body {
     background-color: #f4f4f4;
     color: #333;
     padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-end; /* Joga todo o menu para a direita */
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; 
+}
+
+nav li {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+nav li:hover {
+    color: #007BFF; /* Cor azul ao passar o mouse */
+}
+
+main {
+    flex-grow: 1; /* Faz o main ocupar o espaço restante na tela */
+    display: flex;
+    justify-content: center; 
+    padding: 40px 20px;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha todo o conteúdo dentro da caixa à esquerda */
+    max-width: 800px; /* Limita a largura para criar o efeito "meio centralizado" */
+    width: 100%;
+}
+
+#hero img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+#hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+#hero h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #777;
+    border-top: 1px solid #ddd;
 }

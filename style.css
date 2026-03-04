@@ -1,4 +1,5 @@
-/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +7,19 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #0a0f1a;
+    color: #e2e8f0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 header {
-    margin-bottom: 2rem;
+    padding: 20px 40px;
     display: flex;
-    justify-content: flex-end; /* Joga todo o menu para a direita */
-    padding: 10px 20px;
+    justify-content: flex-end;
+    border-bottom: 1px solid #1f2937;
 }
 
 nav ul {
@@ -29,63 +28,188 @@ nav ul {
     gap: 30px; 
 }
 
-nav li {
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: color 0.3s ease; /* Efeito suave ao passar o mouse */
+nav li a {
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-nav li:hover {
-    color: #007BFF; /* Cor azul ao passar o mouse */
+nav li a:hover {
+    color: #00f0ff;
 }
 
 main {
-    flex-grow: 1; /* Faz o main ocupar o espaço restante na tela */
+    flex-grow: 1;
     display: flex;
     justify-content: center; 
+    align-items: center; 
     padding: 40px 20px;
 }
 
 #hero {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha todo o conteúdo dentro da caixa à esquerda */
-    max-width: 800px; /* Limita a largura para criar o efeito "meio centralizado" */
+    flex-direction: row; 
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
     width: 100%;
 }
 
 #hero img {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%; 
     object-fit: cover;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border: 3px solid #00f0ff;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tag {
+    font-family: 'Fira Code', monospace;
+    color: #00f0ff;
+    font-size: 0.9rem;
 }
 
 #hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-    color: #222;
+    font-size: 3.5rem;
+    color: #ffffff;
 }
 
 #hero h2 {
+    font-family: 'Fira Code', monospace;
     font-size: 1.5rem;
-    font-weight: normal;
-    color: #555;
-    margin-bottom: 20px;
+    font-weight: 400;
+    color: #94a3b8;
+    border-right: 2px solid #00f0ff;
+    padding-right: 5px;
 }
 
-#hero p {
+.bio {
     font-size: 1.1rem;
-    color: #666;
+    color: #94a3b8;
+    max-width: 500px;
+    line-height: 1.6;
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
-    color: #777;
-    border-top: 1px solid #ddd;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: #475569;
+    border-top: 1px solid #1f2937;
+}
+
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/*ESTILOS ESPECÍFICOS DO CURRÍCULO */
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav li.active a {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+}
+
+#cv-content {
+    max-width: 800px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.cv-header {
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.cv-header h1 {
+    color: #222222; 
+}
+
+.cv-header p {
+    color: #555555;
+}
+
+.cv-section {
+    margin-bottom: 30px;
+}
+
+.cv-section h2 {
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cv-item {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 15px;
+    border-left: 3px solid #eeeeee;
+}
+
+.cv-item h3 {
+    font-size: 1.2rem;
+    color: #222222;
+    margin-bottom: 5px;
+}
+
+.cv-item p {
+    color: #444444; 
+}
+
+.cv-item .date {
+    font-size: 0.9rem;
+    color: #777777;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Tags de Habilidades */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    background-color: #f4f4f4; 
+    color: #111111; 
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid #dddddd;
 }
